@@ -7,14 +7,10 @@ class SiteFooter extends HTMLElement {
             <!-- Contact Information -->
             <div>
               <h4 class="text-xl font-semibold mb-4 text-accent">Contact Us</h4>
-              <div class="space-y-2 text-sm">
-                <p>
-                  <strong>Phone:</strong><br>
-                  <a href="tel:+447958732764" class="hover:text-accent transition-colors">07958 732 764</a>
-                </p>
+              <div class="space-y-2 text-sm">                
                 <p>
                   <strong>Email:</strong><br>
-                  <a href="mailto:contact@greekschoolnewcastle.co.uk" class="hover:text-accent transition-colors">
+                  <a href="mailto:contact@greekschoolnewcastle.co.uk?subject=Enquiry%20from%20Website" class="hover:text-accent transition-colors">
                     contact@greekschoolnewcastle.co.uk
                   </a>
                 </p>
