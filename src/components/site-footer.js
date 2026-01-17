@@ -32,6 +32,7 @@ class SiteFooter extends HTMLElement {
                 <li><a href="gallery.html" class="hover:text-accent transition-colors">Gallery</a></li>
                 <li><a href="get-involved.html" class="hover:text-accent transition-colors">Get Involved</a></li>
                 <li><a href="contact.html" class="hover:text-accent transition-colors">Contact</a></li>
+                <li><a href="https://drive.google.com/drive/folders/1yZcet2rPvEx9IdV0NZd4bxi-EobRkEsU?usp=drive_link" target="_blank" class="hover:text-accent transition-colors">Policies</a></li>
               </ul>
             </div>
 
