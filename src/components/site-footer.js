@@ -54,9 +54,9 @@ class SiteFooter extends HTMLElement {
                 </div>
                 <div class="text-sm">
                   <p class="font-semibold mb-2">School Hours:</p>
-                  <p>Children: Saturdays</p>
-                  <p>Adults: Wednesdays (in-person)</p>
-                  <p>Adults: Mondays (online)</p>
+                  <p>Children: Sat (10am-4:30pm)</p>
+                  <p>Adults: Wednesdays (in-person, 6-8pm)</p>
+                  <p>Adults: Mondays (online, 6-8pm)</p>
                 </div>
               </div>
             </div>
