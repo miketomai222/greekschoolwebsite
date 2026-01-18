@@ -9,7 +9,8 @@ class SiteHeader extends HTMLElement {
             <!-- Logo/School Name -->
             <a href="index.html" class="flex items-center space-x-3 group">
               <div class="text-xl md:text-2xl font-heading font-bold transition-colors group-hover:text-accent">
-                Greek Community School of Newcastle
+                <span class="lang-en">Greek Community School of Newcastle</span>
+                <span class="lang-el">Ελληνικό Σχολείο Νιούκαστλ</span>
               </div>
             </a>
 
@@ -27,6 +28,16 @@ class SiteHeader extends HTMLElement {
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center space-x-1 lg:space-x-2">
               ${this.renderNavLinks(currentPage)}
+              <div class="border-l border-white/30 pl-6">
+                <button
+                  data-lang-toggle
+                  onclick="window.langUtils?.toggleLanguage()"
+                  class="text-sm hover:text-accent transition-colors font-semibold"
+                  title="Switch language"
+                >
+                  EL
+                </button>
+              </div>
             </div>
           </div>
 
@@ -34,6 +45,14 @@ class SiteHeader extends HTMLElement {
           <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-white/20 mt-4 pt-4 animate-fade-in">
             <div class="flex flex-col space-y-1">
               ${this.renderNavLinks(currentPage, true)}
+              <button
+                data-lang-toggle
+                onclick="window.langUtils?.toggleLanguage()"
+                class="py-2 text-base text-left hover:text-accent transition-colors font-semibold"
+                title="Switch language"
+              >
+                EL
+              </button>
             </div>
           </div>
         </nav>
@@ -53,12 +72,12 @@ class SiteHeader extends HTMLElement {
 
   renderNavLinks(currentPage, isMobile = false) {
     const links = [
-      { href: 'index.html', label: 'Home' },
-      { href: 'about.html', label: 'About' },
-      { href: 'admissions.html', label: 'Admissions' },
-      { href: 'gallery.html', label: 'Gallery' },
-      { href: 'get-involved.html', label: 'Get Involved' },
-      { href: 'contact.html', label: 'Contact' },
+      { href: 'index.html', labelEn: 'Home', labelEl: 'Αρχική' },
+      { href: 'about.html', labelEn: 'About', labelEl: 'Σχετικά' },
+      { href: 'admissions.html', labelEn: 'Admissions', labelEl: 'Εγγραφές' },
+      { href: 'gallery.html', labelEn: 'Gallery', labelEl: 'Συλλογή' },
+      { href: 'get-involved.html', labelEn: 'Get Involved', labelEl: 'Συμμετοχή' },
+      { href: 'contact.html', labelEn: 'Contact', labelEl: 'Επικοινωνία' },
     ];
 
     return links.map(link => {
@@ -68,7 +87,10 @@ class SiteHeader extends HTMLElement {
         const activeClass = isActive
           ? 'text-accent font-semibold bg-white/10'
           : 'hover:text-accent hover:bg-white/5';
-        return `<a href="${link.href}" class="py-3 px-4 text-base ${activeClass} transition-all duration-300 rounded-lg">${link.label}</a>`;
+        return `<a href="${link.href}" class="py-3 px-4 text-base ${activeClass} transition-all duration-300 rounded-lg">
+          <span class="lang-en">${link.labelEn}</span>
+          <span class="lang-el">${link.labelEl}</span>
+        </a>`;
       }
 
       const activeClass = isActive
@@ -76,7 +98,8 @@ class SiteHeader extends HTMLElement {
         : 'hover:text-accent';
       return `
         <a href="${link.href}" class="relative px-3 py-2 text-sm ${activeClass} transition-all duration-300 group">
-          ${link.label}
+          <span class="lang-en">${link.labelEn}</span>
+          <span class="lang-el">${link.labelEl}</span>
           <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full ${isActive ? 'w-full' : ''}"></span>
         </a>
       `;
